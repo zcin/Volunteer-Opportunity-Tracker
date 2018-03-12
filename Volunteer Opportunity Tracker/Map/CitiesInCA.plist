@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Los Angeles</key>
+	<dict>
+		<key>cityName</key>
+		<string>Los Angeles</string>
+		<key>lat</key>
+		<real>34.052235</real>
+		<key>long</key>
+		<real>-118.243683</real>
+		<key>latDelta</key>
+		<integer>0</integer>
+		<key>longDelta</key>
+		<integer>0</integer>
+	</dict>
+	<key>San Francisco</key>
+	<dict>
+		<key>cityName</key>
+		<string>San Francisco</string>
+		<key>lat</key>
+		<real>37.7749</real>
+		<key>long</key>
+		<real>-122.4194</real>
+		<key>latDelta</key>
+		<integer>0</integer>
+		<key>longDelta</key>
+		<integer>0</integer>
+	</dict>
+	<key>Cupertino</key>
+	<dict>
+		<key>cityName</key>
+		<string>Cupertino</string>
+		<key>lat</key>
+		<real>37.323</real>
+		<key>long</key>
+		<real>-122.0322</real>
+		<key>latDelta</key>
+		<integer>0</integer>
+		<key>longDelta</key>
+		<integer>0</integer>
+	</dict>
+	<key>Palo Alto</key>
+	<dict>
+		<key>cityName</key>
+		<string>Palo Alto</string>
+		<key>lat</key>
+		<real>37.4419</real>
+		<key>long</key>
+		<real>-122.143</real>
+		<key>latDelta</key>
+		<integer>0</integer>
+		<key>longDelta</key>
+		<integer>0</integer>
+	</dict>
+	<key>Mountain View</key>
+	<dict>
+		<key>cityName</key>
+		<string>Mountain View</string>
+		<key>lat</key>
+		<real>37.3861</real>
+		<key>long</key>
+		<real>-122.0839</real>
+		<key>latDelta</key>
+		<integer>0</integer>
+		<key>longDelta</key>
+		<integer>0</integer>
+	</dict>
+	<key>Milpitas</key>
+	<dict>
+		<key>cityName</key>
+		<string>Milpitas</string>
+		<key>lat</key>
+		<real>37.4323</real>
+		<key>long</key>
+		<real>-121.8996</real>
+		<key>latDelta</key>
+		<integer>0</integer>
+		<key>longDelta</key>
+		<integer>0</integer>
+	</dict>
+	<key>Berkeley</key>
+	<dict>
+		<key>cityName</key>
+		<string>Berkeley</string>
+		<key>lat</key>
+		<real>37.8716</real>
+		<key>long</key>
+		<real>-122.2727</real>
+		<key>latDelta</key>
+		<integer>0</integer>
+		<key>longDelta</key>
+		<integer>0</integer>
+	</dict>
+	<key>San Jose</key>
+	<dict>
+		<key>cityName</key>
+		<string>San Jose</string>
+		<key>lat</key>
+		<real>37.3382</real>
+		<key>long</key>
+		<real>-121.8863</real>
+		<key>latDelta</key>
+		<integer>0</integer>
+		<key>longDelta</key>
+		<integer>0</integer>
+	</dict>
+	<key>Sunnyvale</key>
+	<dict>
+		<key>cityName</key>
+		<string>Sunnyvale</string>
+		<key>lat</key>
+		<real>37.368832</real>
+		<key>long</key>
+		<real>-122.036346</real>
+		<key>latDelta</key>
+		<integer>0</integer>
+		<key>longDelta</key>
+		<integer>0</integer>
+	</dict>
+</dict>
+</plist>

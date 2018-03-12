@@ -7,21 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		376695262053A147002EF8A4 /* ExploreEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376695252053A147002EF8A4 /* ExploreEventCell.swift */; };
+		377503772051B178001AB6E2 /* EventsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377503762051B178001AB6E2 /* EventsDataManager.swift */; };
 		379643B0204CD0A100603D66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379643AF204CD0A100603D66 /* AppDelegate.swift */; };
-		379643B2204CD0A100603D66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379643B1204CD0A100603D66 /* ViewController.swift */; };
 		379643B5204CD0A100603D66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379643B3204CD0A100603D66 /* Main.storyboard */; };
 		379643B7204CD0A100603D66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 379643B6204CD0A100603D66 /* Assets.xcassets */; };
 		379643BA204CD0A100603D66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379643B8204CD0A100603D66 /* LaunchScreen.storyboard */; };
+		379643C3204CDBC400603D66 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379643C2204CDBC400603D66 /* ExploreViewController.swift */; };
+		379643D2204CDFCB00603D66 /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379643D0204CDFCB00603D66 /* Explore.storyboard */; };
+		379643D4204CE0CC00603D66 /* My Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379643D3204CE0CC00603D66 /* My Events.storyboard */; };
+		379643D7204CE0E700603D66 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379643D5204CE0E700603D66 /* Map.storyboard */; };
+		379643D9204CE29800603D66 /* CreateEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379643D8204CE29800603D66 /* CreateEvent.storyboard */; };
+		379643DC204D074F00603D66 /* EventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379643DB204D074F00603D66 /* EventObject.swift */; };
+		379643DE204D110C00603D66 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379643DD204D110C00603D66 /* CreateEventViewController.swift */; };
+		379643E0204DF91300603D66 /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379643DF204DF91300603D66 /* EventAnnotation.swift */; };
+		379643E2204DFA6300603D66 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379643E1204DFA6300603D66 /* MapViewController.swift */; };
+		379643E4204DFD4900603D66 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379643E3204DFD4900603D66 /* Profile.swift */; };
+		379643E6204DFDDB00603D66 /* CitiesInCA.plist in Resources */ = {isa = PBXBuildFile; fileRef = 379643E5204DFDDB00603D66 /* CitiesInCA.plist */; };
+		37A949EC2055AB4D00012350 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37A949EB2055AB4D00012350 /* GoogleService-Info.plist */; };
+		37C580C720504A6A001739F2 /* EventAnnotationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C580C620504A6A001739F2 /* EventAnnotationViews.swift */; };
+		E806179444E97EDDFE81586C /* Pods_Volunteer_Opportunity_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8948937D142044C97CB49B05 /* Pods_Volunteer_Opportunity_Tracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		376695252053A147002EF8A4 /* ExploreEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreEventCell.swift; sourceTree = "<group>"; };
+		377503762051B178001AB6E2 /* EventsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDataManager.swift; sourceTree = "<group>"; };
 		379643AC204CD0A100603D66 /* Volunteer Opportunity Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Volunteer Opportunity Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		379643AF204CD0A100603D66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		379643B1204CD0A100603D66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		379643B4204CD0A100603D66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		379643B6204CD0A100603D66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		379643B9204CD0A100603D66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		379643BB204CD0A100603D66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		379643C2204CDBC400603D66 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		379643D1204CDFCB00603D66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Volunteer Opportunity Tracker/Base.lproj/Explore.storyboard"; sourceTree = "<group>"; };
+		379643D3204CE0CC00603D66 /* My Events.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "My Events.storyboard"; sourceTree = "<group>"; };
+		379643D6204CE0E700603D66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Volunteer Opportunity Tracker/Base.lproj/Map.storyboard"; sourceTree = "<group>"; };
+		379643D8204CE29800603D66 /* CreateEvent.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateEvent.storyboard; sourceTree = "<group>"; };
+		379643DB204D074F00603D66 /* EventObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventObject.swift; sourceTree = "<group>"; };
+		379643DD204D110C00603D66 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
+		379643DF204DF91300603D66 /* EventAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
+		379643E1204DFA6300603D66 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		379643E3204DFD4900603D66 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		379643E5204DFDDB00603D66 /* CitiesInCA.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CitiesInCA.plist; sourceTree = "<group>"; };
+		37A949EB2055AB4D00012350 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		37C580C620504A6A001739F2 /* EventAnnotationViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotationViews.swift; sourceTree = "<group>"; };
+		40DBA83636D675748BAD05C8 /* Pods-Volunteer Opportunity Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Volunteer Opportunity Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Volunteer Opportunity Tracker/Pods-Volunteer Opportunity Tracker.debug.xcconfig"; sourceTree = "<group>"; };
+		8948937D142044C97CB49B05 /* Pods_Volunteer_Opportunity_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Volunteer_Opportunity_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1220092624A98856B535E1A /* Pods-Volunteer Opportunity Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Volunteer Opportunity Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Volunteer Opportunity Tracker/Pods-Volunteer Opportunity Tracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E806179444E97EDDFE81586C /* Pods_Volunteer_Opportunity_Tracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +73,8 @@
 			children = (
 				379643AE204CD0A100603D66 /* Volunteer Opportunity Tracker */,
 				379643AD204CD0A100603D66 /* Products */,
+				FA050480686F523401C82517 /* Pods */,
+				AA3113CA3448FDEB85445FD0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +89,77 @@
 		379643AE204CD0A100603D66 /* Volunteer Opportunity Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				379643AF204CD0A100603D66 /* AppDelegate.swift */,
-				379643B1204CD0A100603D66 /* ViewController.swift */,
-				379643B3204CD0A100603D66 /* Main.storyboard */,
 				379643B6204CD0A100603D66 /* Assets.xcassets */,
+				379643B3204CD0A100603D66 /* Main.storyboard */,
 				379643B8204CD0A100603D66 /* LaunchScreen.storyboard */,
+				379643E3204DFD4900603D66 /* Profile.swift */,
+				379643DA204CE2A000603D66 /* Create Event */,
+				379643C8204CDD8400603D66 /* Events */,
+				379643C7204CDD7F00603D66 /* Map */,
+				379643C1204CDBA400603D66 /* Explore */,
+				379643AF204CD0A100603D66 /* AppDelegate.swift */,
 				379643BB204CD0A100603D66 /* Info.plist */,
+				37A949EB2055AB4D00012350 /* GoogleService-Info.plist */,
 			);
 			path = "Volunteer Opportunity Tracker";
+			sourceTree = "<group>";
+		};
+		379643C1204CDBA400603D66 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				379643D0204CDFCB00603D66 /* Explore.storyboard */,
+				379643C2204CDBC400603D66 /* ExploreViewController.swift */,
+				377503762051B178001AB6E2 /* EventsDataManager.swift */,
+				376695252053A147002EF8A4 /* ExploreEventCell.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		379643C7204CDD7F00603D66 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				379643D5204CE0E700603D66 /* Map.storyboard */,
+				379643DF204DF91300603D66 /* EventAnnotation.swift */,
+				379643E1204DFA6300603D66 /* MapViewController.swift */,
+				379643E5204DFDDB00603D66 /* CitiesInCA.plist */,
+				37C580C620504A6A001739F2 /* EventAnnotationViews.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		379643C8204CDD8400603D66 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				379643D3204CE0CC00603D66 /* My Events.storyboard */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		379643DA204CE2A000603D66 /* Create Event */ = {
+			isa = PBXGroup;
+			children = (
+				379643D8204CE29800603D66 /* CreateEvent.storyboard */,
+				379643DB204D074F00603D66 /* EventObject.swift */,
+				379643DD204D110C00603D66 /* CreateEventViewController.swift */,
+			);
+			path = "Create Event";
+			sourceTree = "<group>";
+		};
+		AA3113CA3448FDEB85445FD0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8948937D142044C97CB49B05 /* Pods_Volunteer_Opportunity_Tracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA050480686F523401C82517 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				40DBA83636D675748BAD05C8 /* Pods-Volunteer Opportunity Tracker.debug.xcconfig */,
+				E1220092624A98856B535E1A /* Pods-Volunteer Opportunity Tracker.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +169,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 379643BE204CD0A100603D66 /* Build configuration list for PBXNativeTarget "Volunteer Opportunity Tracker" */;
 			buildPhases = (
+				2A458EE12DCD7A697037D134 /* [CP] Check Pods Manifest.lock */,
 				379643A8204CD0A100603D66 /* Sources */,
 				379643A9204CD0A100603D66 /* Frameworks */,
 				379643AA204CD0A100603D66 /* Resources */,
+				A9CD1144FA93E75019CF6112 /* [CP] Embed Pods Frameworks */,
+				09228626BF0ECECD8DBEC249 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,21 +224,91 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				379643D2204CDFCB00603D66 /* Explore.storyboard in Resources */,
 				379643BA204CD0A100603D66 /* LaunchScreen.storyboard in Resources */,
+				37A949EC2055AB4D00012350 /* GoogleService-Info.plist in Resources */,
 				379643B7204CD0A100603D66 /* Assets.xcassets in Resources */,
+				379643D9204CE29800603D66 /* CreateEvent.storyboard in Resources */,
 				379643B5204CD0A100603D66 /* Main.storyboard in Resources */,
+				379643D4204CE0CC00603D66 /* My Events.storyboard in Resources */,
+				379643E6204DFDDB00603D66 /* CitiesInCA.plist in Resources */,
+				379643D7204CE0E700603D66 /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09228626BF0ECECD8DBEC249 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Volunteer Opportunity Tracker/Pods-Volunteer Opportunity Tracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A458EE12DCD7A697037D134 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Volunteer Opportunity Tracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9CD1144FA93E75019CF6112 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Volunteer Opportunity Tracker/Pods-Volunteer Opportunity Tracker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Volunteer Opportunity Tracker/Pods-Volunteer Opportunity Tracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		379643A8204CD0A100603D66 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				379643B2204CD0A100603D66 /* ViewController.swift in Sources */,
+				379643C3204CDBC400603D66 /* ExploreViewController.swift in Sources */,
+				377503772051B178001AB6E2 /* EventsDataManager.swift in Sources */,
+				376695262053A147002EF8A4 /* ExploreEventCell.swift in Sources */,
+				379643E2204DFA6300603D66 /* MapViewController.swift in Sources */,
+				379643DC204D074F00603D66 /* EventObject.swift in Sources */,
+				379643E4204DFD4900603D66 /* Profile.swift in Sources */,
 				379643B0204CD0A100603D66 /* AppDelegate.swift in Sources */,
+				379643E0204DF91300603D66 /* EventAnnotation.swift in Sources */,
+				379643DE204D110C00603D66 /* CreateEventViewController.swift in Sources */,
+				37C580C720504A6A001739F2 /* EventAnnotationViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +329,22 @@
 				379643B9204CD0A100603D66 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		379643D0204CDFCB00603D66 /* Explore.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				379643D1204CDFCB00603D66 /* Base */,
+			);
+			name = Explore.storyboard;
+			sourceTree = "<group>";
+		};
+		379643D5204CE0E700603D66 /* Map.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				379643D6204CE0E700603D66 /* Base */,
+			);
+			name = Map.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -272,6 +459,7 @@
 		};
 		379643BF204CD0A100603D66 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40DBA83636D675748BAD05C8 /* Pods-Volunteer Opportunity Tracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +474,7 @@
 		};
 		379643C0204CD0A100603D66 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1220092624A98856B535E1A /* Pods-Volunteer Opportunity Tracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
