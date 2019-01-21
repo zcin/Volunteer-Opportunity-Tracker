@@ -8,42 +8,75 @@
 
 import Foundation
 import UIKit
-import os.log
+import FirebaseDatabase
 
-class EventObject: NSObject, NSCoding {
+class EventObject: NSObject{
     
     var name: String
     var location: String
-    var photo: UIImage?
+    var address: String
+    var eventDescription: String
+    var date: String
+    var startTime: String
+    var endTime: String
+    var imageURL: String
     
-    //MARK: Archiving Paths
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("events")
+    var key: String
+    var ref: DatabaseReference?
     
-    init(name: String, location: String, photo: UIImage?) {
+    override init() {
+        self.name = ""
+        self.location = ""
+        self.address = ""
+        self.eventDescription = ""
+        self.date = ""
+        self.startTime = ""
+        self.endTime = ""
+        self.imageURL = ""
+        
+        self.key = ""
+        self.ref = nil
+    }
+    
+    init(name: String, location: String, address: String, description: String, date: String, startTime: String, endTime: String) {
         self.name = name
         self.location = location
-        self.photo = photo
-    }
-    
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(name, forKey: PropertyKey.name)
-        aCoder.encode(location, forKey: PropertyKey.location)
-        aCoder.encode(photo, forKey: PropertyKey.photo)
-    }
-    
-    required convenience init?(coder aDecoder: NSCoder) {
-        let name = aDecoder.decodeObject(forKey: PropertyKey.name) as? String
-        let location = aDecoder.decodeObject(forKey: PropertyKey.location) as? String
-        let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
+        self.address = address
+        self.eventDescription = description
+        self.date = date
+        self.startTime = startTime
+        self.endTime = endTime
+        self.imageURL = ""
         
-        // Must call designated initializer.
-        self.init(name: name!, location: location!, photo: photo)
+        self.key = name.lowercased()
+        self.ref = nil
     }
     
-    struct PropertyKey {
-        static let name = "name"
-        static let location = "location"
-        static let photo = "photo"
+    init(snapshot: DataSnapshot) {
+        self.key = snapshot.key
+        self.ref = snapshot.ref
+        
+        let snapshotValue = snapshot.value as! [String: AnyObject]
+        self.name = snapshotValue["name"] as! String
+        self.location = snapshotValue["location"] as! String
+        self.address = snapshotValue["address"] as! String
+        self.eventDescription = snapshotValue["description"] as! String
+        self.date = snapshotValue["date"] as! String
+        self.startTime = snapshotValue["startTime"] as! String
+        self.endTime = snapshotValue["endTime"] as! String
+        self.imageURL = snapshotValue["imageURL"] as! String
+    }
+    
+    func toAnyObject() -> Any {
+        return [
+            "name": name,
+            "location": location,
+            "address": address,
+            "description": eventDescription,
+            "date": date,
+            "startTime": startTime,
+            "endTime": endTime
+        ]
     }
 }
+

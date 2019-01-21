@@ -26,6 +26,8 @@
 		379643E6204DFDDB00603D66 /* CitiesInCA.plist in Resources */ = {isa = PBXBuildFile; fileRef = 379643E5204DFDDB00603D66 /* CitiesInCA.plist */; };
 		37A949EC2055AB4D00012350 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37A949EB2055AB4D00012350 /* GoogleService-Info.plist */; };
 		37C580C720504A6A001739F2 /* EventAnnotationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C580C620504A6A001739F2 /* EventAnnotationViews.swift */; };
+		37F021EB2059E0DD00028F3C /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F021EA2059E0DD00028F3C /* EventDetailViewController.swift */; };
+		37F021EE205A33AC00028F3C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F021ED205A33AC00028F3C /* Extensions.swift */; };
 		E806179444E97EDDFE81586C /* Pods_Volunteer_Opportunity_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8948937D142044C97CB49B05 /* Pods_Volunteer_Opportunity_Tracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		379643E5204DFDDB00603D66 /* CitiesInCA.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CitiesInCA.plist; sourceTree = "<group>"; };
 		37A949EB2055AB4D00012350 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		37C580C620504A6A001739F2 /* EventAnnotationViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotationViews.swift; sourceTree = "<group>"; };
+		37F021EA2059E0DD00028F3C /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		37F021ED205A33AC00028F3C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		40DBA83636D675748BAD05C8 /* Pods-Volunteer Opportunity Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Volunteer Opportunity Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Volunteer Opportunity Tracker/Pods-Volunteer Opportunity Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		8948937D142044C97CB49B05 /* Pods_Volunteer_Opportunity_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Volunteer_Opportunity_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1220092624A98856B535E1A /* Pods-Volunteer Opportunity Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Volunteer Opportunity Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Volunteer Opportunity Tracker/Pods-Volunteer Opportunity Tracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,13 +97,14 @@
 				379643B3204CD0A100603D66 /* Main.storyboard */,
 				379643B8204CD0A100603D66 /* LaunchScreen.storyboard */,
 				379643E3204DFD4900603D66 /* Profile.swift */,
+				379643AF204CD0A100603D66 /* AppDelegate.swift */,
+				379643BB204CD0A100603D66 /* Info.plist */,
+				37A949EB2055AB4D00012350 /* GoogleService-Info.plist */,
+				37F021EC205A339F00028F3C /* Helpers */,
 				379643DA204CE2A000603D66 /* Create Event */,
 				379643C8204CDD8400603D66 /* Events */,
 				379643C7204CDD7F00603D66 /* Map */,
 				379643C1204CDBA400603D66 /* Explore */,
-				379643AF204CD0A100603D66 /* AppDelegate.swift */,
-				379643BB204CD0A100603D66 /* Info.plist */,
-				37A949EB2055AB4D00012350 /* GoogleService-Info.plist */,
 			);
 			path = "Volunteer Opportunity Tracker";
 			sourceTree = "<group>";
@@ -108,9 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				379643D0204CDFCB00603D66 /* Explore.storyboard */,
-				379643C2204CDBC400603D66 /* ExploreViewController.swift */,
-				377503762051B178001AB6E2 /* EventsDataManager.swift */,
-				376695252053A147002EF8A4 /* ExploreEventCell.swift */,
+				37F021F0205AD65F00028F3C /* Main */,
+				37F021EF205AD64100028F3C /* EventDetails */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -143,6 +147,32 @@
 				379643DD204D110C00603D66 /* CreateEventViewController.swift */,
 			);
 			path = "Create Event";
+			sourceTree = "<group>";
+		};
+		37F021EC205A339F00028F3C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				37F021ED205A33AC00028F3C /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		37F021EF205AD64100028F3C /* EventDetails */ = {
+			isa = PBXGroup;
+			children = (
+				37F021EA2059E0DD00028F3C /* EventDetailViewController.swift */,
+			);
+			path = EventDetails;
+			sourceTree = "<group>";
+		};
+		37F021F0205AD65F00028F3C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				379643C2204CDBC400603D66 /* ExploreViewController.swift */,
+				377503762051B178001AB6E2 /* EventsDataManager.swift */,
+				376695252053A147002EF8A4 /* ExploreEventCell.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		AA3113CA3448FDEB85445FD0 /* Frameworks */ = {
@@ -279,12 +309,20 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Volunteer Opportunity Tracker/Pods-Volunteer Opportunity Tracker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,8 +344,10 @@
 				379643DC204D074F00603D66 /* EventObject.swift in Sources */,
 				379643E4204DFD4900603D66 /* Profile.swift in Sources */,
 				379643B0204CD0A100603D66 /* AppDelegate.swift in Sources */,
+				37F021EE205A33AC00028F3C /* Extensions.swift in Sources */,
 				379643E0204DF91300603D66 /* EventAnnotation.swift in Sources */,
 				379643DE204D110C00603D66 /* CreateEventViewController.swift in Sources */,
+				37F021EB2059E0DD00028F3C /* EventDetailViewController.swift in Sources */,
 				37C580C720504A6A001739F2 /* EventAnnotationViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,7 +503,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K7MU27W435;
 				INFOPLIST_FILE = "Volunteer Opportunity Tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Volunteer-Opportunity-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -478,7 +520,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K7MU27W435;
 				INFOPLIST_FILE = "Volunteer Opportunity Tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Volunteer-Opportunity-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";

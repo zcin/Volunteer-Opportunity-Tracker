@@ -7,21 +7,24 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ExploreEventCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subtitle: UILabel!
-    
+    @IBOutlet weak var backgroundImageView: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        backgroundImageView.contentMode = .scaleAspectFill
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
+    
+    override func prepareForReuse() {
+        backgroundImageView.image = nil
+    }
 }

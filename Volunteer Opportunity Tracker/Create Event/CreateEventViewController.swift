@@ -10,46 +10,106 @@ import UIKit
 
 class CreateEventViewController: UIViewController, UITextFieldDelegate{
     
-    let manager = EventsDataManager.sharedInstance
+    var manager:EventsDataManager!
 
     @IBOutlet weak var eventNameInput: UITextField!
     @IBOutlet weak var locationInput: UITextField!
     @IBOutlet weak var addressInput: UITextField!
+    @IBOutlet weak var descriptionInput: UITextView!
     @IBOutlet weak var photoInput: UIImageView!
+    
+    @IBOutlet weak var dateField: UITextField!
+    @IBOutlet weak var startTimeField: UITextField!
+    @IBOutlet weak var endTimeField: UITextField!
+    
+    
+    let datePickerView:UIDatePicker = UIDatePicker()
+    var dateTimeFieldEdited:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        eventNameInput.delegate = self
-        locationInput.delegate = self
-        addressInput.delegate = self
+        
+        manager = EventsDataManager.sharedInstance
+        
+        descriptionInput.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
+        descriptionInput.layer.borderWidth = 1.0
+        descriptionInput.layer.cornerRadius = 5
+        
+        
+        createDatePicker()
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+    func createDatePicker(){
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let done = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePickingDate))
+        toolbar.setItems([done], animated: false)
+        
+        dateField.inputAccessoryView = toolbar
+        startTimeField.inputAccessoryView = toolbar
+        endTimeField.inputAccessoryView = toolbar
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        print(textField.text!)
+    @IBAction func dateFieldEditing(_ sender: UITextField) {
+        if sender.accessibilityIdentifier! == "date" { datePickerView.datePickerMode = UIDatePickerMode.date }
+        else { datePickerView.datePickerMode = UIDatePickerMode.time }
+        sender.inputView = datePickerView
+        dateTimeFieldEdited = sender.accessibilityIdentifier!
+    }
+    
+    @objc func donePickingDate() {
+        let dateFormatter = DateFormatter()
+        if dateTimeFieldEdited == "date" {
+            dateFormatter.dateStyle = DateFormatter.Style.medium
+            dateFormatter.timeStyle = DateFormatter.Style.none
+            dateField.text = dateFormatter.string(from: datePickerView.date)
+            dateField.endEditing(true)
+        }
+            
+        else {
+            dateFormatter.dateStyle = DateFormatter.Style.none
+            dateFormatter.timeStyle = DateFormatter.Style.short
+            
+            if dateTimeFieldEdited == "startTime" {
+                startTimeField.text = dateFormatter.string(from: datePickerView.date)
+                startTimeField.endEditing(true)
+            } else if dateTimeFieldEdited == "endTime" {
+                endTimeField.text = dateFormatter.string(from: datePickerView.date)
+                endTimeField.endEditing(true)
+            }
+        }
     }
     
     @IBAction func submitButton(_ sender: UIButton) {
         let name = eventNameInput.text
         let location = locationInput.text
+        let address = addressInput.text
+        let description = descriptionInput.text
+        let date = dateField.text
+        let startTime = startTimeField.text
+        let endTime = endTimeField.text
         let photo = photoInput.image
         
-        if name == "" || location == "" || photo == UIImage(named: "Select") {
+        if name == "" || location == "" || address == "" || description == "" || date == "" || startTime == "" || endTime == "" || photo == UIImage(named: "Select") {
             print ("you didn't enter all information required")
         } else {
-            let event = EventObject(name: name!, location: location!, photo: photo!)
-            manager.addEvent(event)
-            manager.saveEventsToArchive()
+            let event = EventObject(name: name!, location: location!, address: address!, description: description!, date: date!, startTime: startTime!, endTime: endTime!)
+            manager.addEventToDatabase(event, photo!)
         }
         
         eventNameInput.text = ""
         locationInput.text = ""
+        addressInput.text = ""
+        descriptionInput.text = ""
+        dateField.text = ""
+        startTimeField.text = ""
+        endTimeField.text = ""
         photoInput.image = UIImage(named: "Select")
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

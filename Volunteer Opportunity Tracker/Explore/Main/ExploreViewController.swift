@@ -7,22 +7,40 @@
 //
 
 import UIKit
+import SDWebImage
 
-class ExploreViewController: UIViewController {
+class ExploreViewController: UIViewController, UITableViewDelegate {
     
-    let manager = EventsDataManager.sharedInstance
+    var manager : EventsDataManager!
 
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        manager = EventsDataManager.sharedInstance
+        
         tableView.delegate = self
         tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        manager.updateEventsFromArchive()
-        tableView.reloadData()
+        manager.updateEvents(){
+            self.tableView.reloadData()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is EventDetailViewController {
+            if let indexPath = tableView.indexPathForSelectedRow{
+                let currentCell = tableView.cellForRow(at: indexPath) as! ExploreEventCell
+                
+                let destinationVC = segue.destination as? EventDetailViewController
+                
+                destinationVC?.event = manager.getItem(at: indexPath)
+                destinationVC?.photo = currentCell.backgroundImageView.image!
+            }
+        }
     }
 }
 
@@ -37,17 +55,17 @@ extension ExploreViewController: UITableViewDataSource {
         let e = manager.getItem(at: indexPath)
         cell.title.text = e.name
         cell.subtitle.text = e.location
-        
-        
-        
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = e.photo
-        backgroundImage.contentMode =  UIViewContentMode.scaleToFill
-        cell.contentView.insertSubview(backgroundImage, at: 0)
-        //cell.contentView.backgroundColor = UIColor(patternImage: UIImage(named:"Select")!)
+        cell.backgroundImageView.loadImageUsingCacheWithURLString(urlString: e.imageURL)
         
         return cell
     }
+    
+    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            completion(data, response, error)
+            }.resume()
+    }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return manager.getNumberOfItems()
@@ -55,21 +73,15 @@ extension ExploreViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            manager.removeEvent(indexPath)
-            manager.saveEventsToArchive()
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            manager.removeEventFromDatabase(indexPath)
+            manager.updateEvents {
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
-}
-
-extension ExploreViewController: UITableViewDelegate {
-
 }
 

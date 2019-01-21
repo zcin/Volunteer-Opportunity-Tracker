@@ -13,28 +13,31 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
+    var manager:EventsDataManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        manager = EventsDataManager.sharedInstance
         mapView.delegate = self
-
-        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+        let initialLocation = CLLocation(latitude: 37.33, longitude: -121.98)
         centerMapOnLocation(location: initialLocation)
-        
-        let eventAnnotation = EventAnnotation(title: "King David Kalakaua",
-                              locationName: "Waikiki Gateway Park",
-                              discipline: "Sculpture",
-                              coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
-        
-        mapView.addAnnotation(eventAnnotation)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        manager.fetchAnnotations{ (annotations) in self.addMap(annotations) }
+    }
+    
+    func addMap (_ annotations:[EventAnnotation]) {
+        mapView.addAnnotations(annotations)
         
         mapView.register(EventView.self,
                          forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
     }
     
-    let regionRadius: CLLocationDistance = 1000
     func centerMapOnLocation(location: CLLocation) {
+        let regionRadius: CLLocationDistance = 20000
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
+//        mapView.setRegion(manager.currentRegion(latDelta: 0.5, longDelta: 0.5), animated: true)
         mapView.setRegion(coordinateRegion, animated: true)
     }
 }
