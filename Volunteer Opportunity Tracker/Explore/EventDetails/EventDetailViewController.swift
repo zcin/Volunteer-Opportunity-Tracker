@@ -9,20 +9,22 @@
 import UIKit
 
 class EventDetailViewController: UITableViewController {
-    
+//    var manager : EventsDataManager!
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var headerImage: UIImageView!
-    
+    @IBOutlet weak var spotsRemaining: UILabel!
+    @IBOutlet weak var spotsTaken: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     
     var event = EventObject()
     var photo = UIImage()
+    var manager = EventsDataManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         titleLabel.text = event.name
         locationLabel.text = event.location
@@ -34,17 +36,29 @@ class EventDetailViewController: UITableViewController {
         locationLabel.sizeToFit()
         addressLabel.sizeToFit()
         
+        spotsRemaining.text = String(event.spotsRemaining)
+        spotsTaken.text = String(event.spotsTaken)
+        
         descriptionTextView.text = event.eventDescription
         descriptionTextView.sizeToFit()
         
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    @IBAction func signUpForEvent(_ sender: UIButton) {
+        event.spotsRemaining -= 1
+        event.spotsTaken += 1
+        
+        spotsRemaining.text = String(event.spotsRemaining)
+        spotsTaken.text = String(event.spotsTaken)
+        
+        manager.updateEventSpotsOnDatabase(event)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

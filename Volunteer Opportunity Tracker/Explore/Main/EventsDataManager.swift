@@ -53,6 +53,14 @@ class EventsDataManager {
             }
         }
     }
+    
+    func updateEventSpotsOnDatabase(_ event: EventObject) {
+        let key = event.name.lowercased()
+        let eventItemRef = self.ref.child(key)
+        
+        eventItemRef.child("spotsRemaining").setValue(event.spotsRemaining);
+        eventItemRef.child("spotsTaken").setValue(event.spotsTaken);
+    }
 
     func removeEventFromDatabase(_ indexPath: IndexPath){
         let event = allEvents[indexPath.row]
@@ -103,7 +111,7 @@ extension EventsDataManager {
                             print("no location found", error!)
                             return
                         }
-                    self.annotations.append(EventAnnotation(title: e.name, locationName: e.location, discipline: "Sculpture", coordinate: location.coordinate))
+                    self.annotations.append(EventAnnotation(title: e.name, locationName: e.location, discipline: "Monument", coordinate: location.coordinate))
                     completion(self.annotations)
                 }
             }

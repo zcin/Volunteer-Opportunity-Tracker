@@ -16,6 +16,7 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var locationInput: UITextField!
     @IBOutlet weak var addressInput: UITextField!
     @IBOutlet weak var descriptionInput: UITextView!
+    @IBOutlet weak var spotsInput: UITextField!
     @IBOutlet weak var photoInput: UIImageView!
     
     @IBOutlet weak var dateField: UITextField!
@@ -85,6 +86,7 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate{
         let location = locationInput.text
         let address = addressInput.text
         let description = descriptionInput.text
+        let spots: Int? = Int(spotsInput.text!)
         let date = dateField.text
         let startTime = startTimeField.text
         let endTime = endTimeField.text
@@ -93,7 +95,7 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate{
         if name == "" || location == "" || address == "" || description == "" || date == "" || startTime == "" || endTime == "" || photo == UIImage(named: "Select") {
             print ("you didn't enter all information required")
         } else {
-            let event = EventObject(name: name!, location: location!, address: address!, description: description!, date: date!, startTime: startTime!, endTime: endTime!)
+            let event = EventObject(name: name!, location: location!, address: address!, description: description!, totalSpots: spots!, date: date!, startTime: startTime!, endTime: endTime!)
             manager.addEventToDatabase(event, photo!)
         }
         
@@ -101,6 +103,7 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate{
         locationInput.text = ""
         addressInput.text = ""
         descriptionInput.text = ""
+        spotsInput.text = ""
         dateField.text = ""
         startTimeField.text = ""
         endTimeField.text = ""

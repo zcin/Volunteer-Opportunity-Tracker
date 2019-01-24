@@ -37,6 +37,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate {
                 
                 let destinationVC = segue.destination as? EventDetailViewController
                 
+                destinationVC?.manager = manager
                 destinationVC?.event = manager.getItem(at: indexPath)
                 destinationVC?.photo = currentCell.backgroundImageView.image!
             }

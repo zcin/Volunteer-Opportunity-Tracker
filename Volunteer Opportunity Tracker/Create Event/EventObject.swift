@@ -16,6 +16,8 @@ class EventObject: NSObject{
     var location: String
     var address: String
     var eventDescription: String
+    var spotsRemaining: Int
+    var spotsTaken: Int
     var date: String
     var startTime: String
     var endTime: String
@@ -29,6 +31,8 @@ class EventObject: NSObject{
         self.location = ""
         self.address = ""
         self.eventDescription = ""
+        self.spotsRemaining = 0
+        self.spotsTaken = 0
         self.date = ""
         self.startTime = ""
         self.endTime = ""
@@ -38,11 +42,13 @@ class EventObject: NSObject{
         self.ref = nil
     }
     
-    init(name: String, location: String, address: String, description: String, date: String, startTime: String, endTime: String) {
+    init(name: String, location: String, address: String, description: String, totalSpots: Int, date: String, startTime: String, endTime: String) {
         self.name = name
         self.location = location
         self.address = address
         self.eventDescription = description
+        self.spotsRemaining = totalSpots
+        self.spotsTaken = 0
         self.date = date
         self.startTime = startTime
         self.endTime = endTime
@@ -61,6 +67,8 @@ class EventObject: NSObject{
         self.location = snapshotValue["location"] as! String
         self.address = snapshotValue["address"] as! String
         self.eventDescription = snapshotValue["description"] as! String
+        self.spotsRemaining = snapshotValue["spotsRemaining"] as! Int
+        self.spotsTaken = snapshotValue["spotsTaken"] as! Int
         self.date = snapshotValue["date"] as! String
         self.startTime = snapshotValue["startTime"] as! String
         self.endTime = snapshotValue["endTime"] as! String
@@ -73,6 +81,8 @@ class EventObject: NSObject{
             "location": location,
             "address": address,
             "description": eventDescription,
+            "spotsRemaining": spotsRemaining,
+            "spotsTaken": spotsTaken,
             "date": date,
             "startTime": startTime,
             "endTime": endTime
