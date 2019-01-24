@@ -27,6 +27,7 @@ class EventDetailViewController: UITableViewController {
         titleLabel.text = event.name
         locationLabel.text = event.location
         addressLabel.text = event.address
+        headerImage.contentMode = .scaleAspectFill
         headerImage.image = photo
         
         titleLabel.sizeToFit()
